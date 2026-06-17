@@ -6,8 +6,6 @@ A minimal "Hello World" Django application, containerized and deployed on AWS us
 
 ## Architecture
 
-![Architecture Diagram](images/architecture-diagram.png)
-
 The VPC (`10.0.0.0/16`) spans two Availability Zones, `us-east-1a` and `us-east-1b`. Each AZ has a public subnet and a private subnet. The public subnets hold the Application Load Balancer and the NAT Gateway; the private subnets hold the EC2 instances that ECS schedules containers onto. Traffic flow: internet → Internet Gateway → ALB → ECS service → container. Outbound traffic from the private instances (registering with ECS, pulling images from ECR, shipping logs to CloudWatch) goes out through the NAT Gateway.
 
 ## Tech stack
@@ -40,7 +38,8 @@ Two IAM roles back the compute layer: `ecsInstanceRole` lets each EC2 instance r
 
 ## Verified deployment
 
-![Hello World output](images/output-screenshot.png)
+![Hello World output](<img width="959" height="539" alt="Screenshot 2026-06-17 064622" src="https://github.com/user-attachments/assets/aa92d53d-0bba-4ad7-8747-3f90b016e763" />
+)
 
 Hitting the ALB's DNS name at `/hello/` returns the expected response, confirming the full path works end to end: Internet Gateway → ALB → ECS service → container → Django.
 
