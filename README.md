@@ -38,7 +38,7 @@ Two IAM roles back the compute layer: `ecsInstanceRole` lets each EC2 instance r
 
 ## Verified deployment
 
-![Hello World output](<img width="959" height="539" alt="Screenshot 2026-06-17 064622" src="https://github.com/user-attachments/assets/aa92d53d-0bba-4ad7-8747-3f90b016e763" />
+![Hello World output](<img width="959" height="539" alt="Screenshot 2026-06-17 064622" src="https://github.com/user-attachments/assets/cc245ccc-9fd8-45ac-be8e-df981fe5e99c" />
 )
 
 Hitting the ALB's DNS name at `/hello/` returns the expected response, confirming the full path works end to end: Internet Gateway → ALB → ECS service → container → Django.
